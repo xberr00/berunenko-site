@@ -791,11 +791,6 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-    align-items: stretch;
-  }
-
   .carousel-card {
     padding: 2.5rem;
   }
@@ -845,6 +840,13 @@ footer {
 
   /* Problems */
   .problems-grid { grid-template-columns: repeat(3, 1fr); }
+
+   /* Pricing */
+
+   .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
 
   /* Contact */
   .contact-card {
