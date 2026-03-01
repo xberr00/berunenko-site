@@ -783,7 +783,7 @@ footer {
 /* ═══════════════════════════════════════════════════
    RESPONSIVE — TABLET (≥768px)
 ════════════════════════════════════════════════════ */
-@media (min-width: 658px) {
+@media (min-width: 500px) {
 
   .hero-photo-mobile { width: 40%; }
 
