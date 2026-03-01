@@ -548,6 +548,23 @@ h3 { font-size: 1.4rem; }
 #eduGroup2 .edu-group-header {
   background: var(--primary-light);
 }
+
+.diploma-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .diploma-view-btn { display: none; }
+}
 /* ═══════════════════════════════════════════════════
    PRICING
 ════════════════════════════════════════════════════ */
@@ -555,7 +572,7 @@ h3 { font-size: 1.4rem; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  max-width: 56rem;
+  max-width: 72rem;
   margin: 0 auto;
 }
 
@@ -606,7 +623,7 @@ h3 { font-size: 1.4rem; }
   font-weight: 600;
   font-size: 2.25rem;
   color: var(--primary);
-  margin-bottom: 2rem;
+  margin-bottom: 0.2rem;
 }
 .pricing-popular .pricing-price { color: #fff; }
 
@@ -775,7 +792,7 @@ footer {
   }
 
   .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: stretch;
   }
 
