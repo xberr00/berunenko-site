@@ -11,6 +11,11 @@
   <meta name="keywords"
     content="психолог кривой рог, психотерапевт кривой рог, психолог онлайн украина, психолог украина, детский психолог, детский психолог кривой рог, консультация психолога, психолог онлайн, психотерапевт украина" />
 
+  <link rel="preload" as="image" href="../profile.jpg" />
+
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
   <!-- Hreflang -->
   <link rel="alternate" hreflang="uk" href="https://berunenko.com/" />
   <link rel="alternate" hreflang="ru" href="https://berunenko.com/ru/" />
@@ -42,26 +47,49 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["MedicalBusiness", "Person"],
-    "name": "Вероника Беруненко",
-    "jobTitle": "Психолог",
-    "description": "Психолог в Кривом Роге. Помогаю преодолеть тревожность, панические атаки, депрессию и конфликты в отношениях.",
-    "url": "https://berunenko.com/ru/",
-    "image": "https://berunenko.com/opengraph.jpg",
-    "telephone": "+380676304012",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Кривой Рог",
-      "addressRegion": "Днепропетровская область",
-      "addressCountry": "UA"
-    },
-    "areaServed": ["Кривой Рог", "Украина"],
-    "availableLanguage": ["Russian"],
-    "sameAs": [
-      "https://www.instagram.com/veronika.berunenko",
-      "https://www.facebook.com/veronika.berunenko/"
-    ],
-    "priceRange": "1499–6499 грн"
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://berunenko.com/ru/#business",
+        "name": "Психолог Вероника Беруненко",
+        "image": "https://berunenko.com/opengraph.jpg",
+        "telephone": "+380676304012",
+        "description": "Психолог в Кривом Роге. Помогаю преодолеть тревожность, панические атаки, депрессию и конфликты в отношениях. Онлайн-консультации по всей Украине.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Кривой Рог",
+          "addressRegion": "Днепропетровская область",
+          "addressCountry": "UA"
+        },
+        "areaServed": ["Кривой Рог", "Украина"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "7"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "UAH",
+          "lowPrice": "1499",
+          "highPrice": "6499",
+          "offerCount": "3"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://berunenko.com/ru/#person",
+        "name": "Вероника Беруненко",
+        "jobTitle": "Психолог",
+        "url": "https://berunenko.com/ru/",
+        "sameAs": [
+          "https://www.instagram.com/veronika.berunenko",
+          "https://www.facebook.com/veronika.berunenko/"
+        ],
+        "worksFor": {
+          "@id": "https://berunenko.com/ru/#business"
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -78,12 +106,24 @@
       </a>
 
       <div class="nav-links" id="navLinks">
-        <button class="nav-link" onclick="scrollToSection('about')">Обо мне</button>
-        <button class="nav-link" onclick="scrollToSection('reviews')">Отзывы</button>
-        <button class="nav-link" onclick="scrollToSection('education')">Образование</button>
-        <button class="nav-link" onclick="scrollToSection('pricing')">Цены</button>
-        <button class="nav-link" onclick="scrollToSection('contact')">Контакты</button>
-        <button class="btn-primary nav-cta" onclick="scrollToSection('contact')">Записаться</button>
+        <a href="#about" class="nav-link" onclick="scrollToSection('about'); return false;">
+          <span>Обо мне</span>
+        </a>
+        <a href="#reviews" class="nav-link" onclick="scrollToSection('reviews'); return false;">
+          <span>Отзывы</span>
+        </a>
+        <a href="#education" class="nav-link" onclick="scrollToSection('education'); return false;">
+          <span>Образование</span>
+        </a>
+        <a href="#pricing" class="nav-link" onclick="scrollToSection('pricing'); return false;">
+          <span>Цены</span>
+        </a>
+        <a href="#contact" class="nav-link" onclick="scrollToSection('contact'); return false;">
+          <span>Контакты</span>
+        </a>
+        <a href="#contact" class="btn-primary nav-cta" onclick="scrollToSection('contact'); return false;">
+          <span>Записаться</span>
+        </a>
       </div>
 
       <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Меню">
@@ -98,12 +138,17 @@
 
     <!-- Mobile menu -->
     <div class="mobile-menu hidden" id="mobileMenu">
-      <button class="mobile-link" onclick="scrollToSection('about')">Обо мне</button>
-      <button class="mobile-link" onclick="scrollToSection('reviews')">Отзывы</button>
-      <button class="mobile-link" onclick="scrollToSection('education')">Образование</button>
-      <button class="mobile-link" onclick="scrollToSection('pricing')">Цены</button>
-      <button class="mobile-link" onclick="scrollToSection('contact')">Контакты</button>
-      <button class="btn-primary mobile-cta" onclick="scrollToSection('contact')">Записаться</button>
+      <a href="#about" class="mobile-link" onclick="scrollToSection('about'); return false;">
+        <span>Обо мне</span>
+      </a>
+      <a href="#reviews" class="mobile-link" onclick="scrollToSection('reviews'); return false;"><span>Отзывы</span></a>
+      <a href="#education" class="mobile-link"
+        onclick="scrollToSection('education'); return false;"><span>Образование</span></a>
+      <a href="#pricing" class="mobile-link" onclick="scrollToSection('pricing'); return false;"><span>Цены</span></a>
+      <a href="#contact" class="mobile-link"
+        onclick="scrollToSection('contact'); return false;"><span>Контакты</span></a>
+      <a href="#contact" class="btn-primary mobile-cta"
+        onclick="scrollToSection('contact'); return false;"><span>Записаться</span></a>
     </div>
   </nav>
 
@@ -134,10 +179,11 @@
               найти. Консультирую онлайн и лично в г. Кривой Рог.</p>
           </div>
           <div class="hero-cta-wrap">
-            <button class="btn-primary btn-large" onclick="scrollToSection('contact')">
-              Записаться на консультацию
-            </button>
+            <a href="#contact" class="btn-primary btn-large" onclick="scrollToSection('contact'); return false;">
+              <span>Записаться на консультацию</span>
+            </a>
           </div>
+
         </div>
 
         <!-- Фото для десктопа -->
@@ -160,9 +206,11 @@
           <div class="about-text">
 
             <h2>Обо мне</h2>
-            <p>Здравствуйте! Меня зовут <strong>Вероника Беруненко</strong>, я — дипломированный психолог с <strong>7-летним опытом</strong> работы. Помогаю людям справляться с тревогой,
+            <p>Здравствуйте! Меня зовут <strong>Вероника Беруненко</strong>, я — дипломированный психолог с
+              <strong>7-летним опытом</strong> работы. Помогаю людям справляться с тревогой,
               паническими атаками, депрессией, трудностями в отношениях, последствиями травм и многими другими
-              проблемами.</p>
+              проблемами.
+            </p>
             <p>Мой путь в психологию был глубоко осознанным. Имея за плечами фундаментальное образование в области
               биологии и медицины, я прекрасно понимаю, как тесно связаны наши эмоции, психика и физическое здоровье
               тела. Это позволяет мне видеть картину целиком и подходить к каждому клиенту комплексно.</p>
@@ -184,9 +232,9 @@
               </div>
             </div>
 
-            <button class="btn-primary btn-large" onclick="scrollToSection('contact')">
+            <a href="#contact" class="btn-primary btn-large" onclick="scrollToSection('contact'); return false;">
               Записаться на консультацию
-            </button>
+            </a>
           </div>
 
         </div>
@@ -566,7 +614,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg><span>Рекомендации по дальнейшей работе</span></li>
             </ul>
-            <button class="btn-primary btn-full" onclick="scrollToSection('contact')">Записаться</button>
+            <a href="#contact" class="btn-primary btn-full"
+              onclick="scrollToSection('contact'); return false;"><span>Записаться</span></a>
           </div>
 
           <!-- Тариф 2 (популярный) -->
@@ -590,7 +639,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg><span>Составление плана решения</span></li>
             </ul>
-            <button class="btn-popular btn-full" onclick="scrollToSection('contact')">Записаться</button>
+            <a href="#contact" class="btn-popular btn-full"
+              onclick="scrollToSection('contact'); return false;"><span>Записаться</span></a>
           </div>
 
           <!-- Тариф 3 -->
@@ -613,7 +663,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg><span>Долгосрочная поддержка</span></li>
             </ul>
-            <button class="btn-primary btn-full" onclick="scrollToSection('contact')">Записаться</button>
+            <a href="#contact" class="btn-primary btn-full"
+              onclick="scrollToSection('contact'); return false;"><span>Записаться</span></a>
           </div>
 
         </div>
