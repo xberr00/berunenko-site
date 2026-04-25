@@ -11,6 +11,11 @@
   <meta name="keywords"
     content="психолог кривий ріг, психотерапевт кривий ріг, психолог онлайн україна, психолог україна, кривий ріг психолог, дитячий психолог, дитячий психолог кривий ріг, консультація психолога, психолог онлайн, психотерапевт україна, психолог кривой рог, психотерапевт кривой рог, психолог украина онлайн, кривой рог психолог, детский психолог, детский психолог кривой рог" />
 
+  <link rel="preload" as="image" href="profile.jpg" />
+
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
   <!-- Hreflang -->
   <link rel="alternate" hreflang="uk" href="https://berunenko.com/" />
   <link rel="alternate" hreflang="ru" href="https://berunenko.com/ru/" />
@@ -45,29 +50,49 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["MedicalBusiness", "Person"],
-    "name": "Вероніка Беруненко",
-    "alternateName": "Вероника Беруненко",
-    "jobTitle": "Психолог / Психолог",
-    "description": "Психолог у Кривому Розі. Допомагаю подолати тривожність, панічні атаки, депресію та конфлікти у стосунках. Онлайн-консультації по всій Україні.",
-    "disambiguatingDescription": "Психолог в Кривом Роге. Помогаю преодолеть тревожность, панические атаки, депрессию и конфликты в отношениях. Онлайн-консультации по всей Украине.",
-    "url": "https://berunenko.com/",
-    "image": "https://berunenko.com/opengraph.jpg",
-    "telephone": "+380676304012",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Кривий Ріг",
-      "alternateName": "Кривой Рог",
-      "addressRegion": "Дніпропетровська область",
-      "addressCountry": "UA"
-    },
-    "areaServed": ["Кривий Ріг", "Україна", "Кривой Рог", "Украина"],
-    "availableLanguage": ["Ukrainian", "Russian"],
-    "sameAs": [
-      "https://www.instagram.com/veronika.berunenko",
-      "https://www.facebook.com/veronika.berunenko/"
-    ],
-    "priceRange": "1499–6499 грн"
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://berunenko.com/#business",
+        "name": "Психолог Вероніка Беруненко",
+        "image": "https://berunenko.com/opengraph.jpg",
+        "telephone": "+380676304012",
+        "description": "Психолог у Кривому Розі. Допомагаю подолати тривожність, панічні атаки, депресію та конфлікти у стосунках. Онлайн-консультації по всій Україні.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Кривий Ріг",
+          "addressRegion": "Дніпропетровська область",
+          "addressCountry": "UA"
+        },
+        "areaServed": ["Кривий Ріг", "Україна"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "7"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "UAH",
+          "lowPrice": "1499",
+          "highPrice": "6499",
+          "offerCount": "3"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://berunenko.com/#person",
+        "name": "Вероніка Беруненко",
+        "jobTitle": "Психолог",
+        "url": "https://berunenko.com/",
+        "sameAs": [
+          "https://www.instagram.com/veronika.berunenko",
+          "https://www.facebook.com/veronika.berunenko/"
+        ],
+        "worksFor": {
+          "@id": "https://berunenko.com/#business"
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -84,12 +109,24 @@
       </a>
 
       <div class="nav-links" id="navLinks">
-        <button class="nav-link" onclick="scrollToSection('about')">Про мне</button>
-        <button class="nav-link" onclick="scrollToSection('reviews')">Відгуки</button>
-        <button class="nav-link" onclick="scrollToSection('education')">Освіта</button>
-        <button class="nav-link" onclick="scrollToSection('pricing')">Ціни</button>
-        <button class="nav-link" onclick="scrollToSection('contact')">Контакти</button>
-        <button class="btn-primary nav-cta" onclick="scrollToSection('contact')">Записатись</button>
+        <a href="#about" class="nav-link" onclick="scrollToSection('about'); return false;">
+          <span>Про мене</span>
+        </a>
+        <a href="#reviews" class="nav-link" onclick="scrollToSection('reviews'); return false;">
+          <span>Відгуки</span>
+        </a>
+        <a href="#education" class="nav-link" onclick="scrollToSection('education'); return false;">
+          <span>Освіта</span>
+        </a>
+        <a href="#pricing" class="nav-link" onclick="scrollToSection('pricing'); return false;">
+          <span>Ціни</span>
+        </a>
+        <a href="#contact" class="nav-link" onclick="scrollToSection('contact'); return false;">
+          <span>Контакти</span>
+        </a>
+        <a href="#contact" class="btn-primary nav-cta" onclick="scrollToSection('contact'); return false;">
+          <span>Записатись</span>
+        </a>
       </div>
 
       <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Меню">
@@ -104,13 +141,18 @@
 
     <!-- Mobile menu -->
     <div class="mobile-menu hidden" id="mobileMenu">
-      <button class="mobile-link" onclick="scrollToSection('about')">Про мне</button>
-      <button class="mobile-link" onclick="scrollToSection('reviews')"><span data-uk="Відгуки">Відгуки</span></button>
-      <button class="mobile-link" onclick="scrollToSection('education')"><span data-uk="Освіта">Освіта</span></button>
-      <button class="mobile-link" onclick="scrollToSection('pricing')"><span data-uk="Ціни">Ціни</span></button>
-      <button class="mobile-link" onclick="scrollToSection('contact')"><span data-uk="Контакти">Контакти</span></button>
-      <button class="btn-primary mobile-cta" onclick="scrollToSection('contact')"><span
-          data-uk="Записатись">Записатись</span></button>
+      <a href="#about" class="mobile-link" onclick="scrollToSection('about'); return false;">
+        <span>Про мене</span>
+      </a>
+      <a href="#reviews" class="mobile-link"
+        onclick="scrollToSection('reviews'); return false;"><span>Відгуки</span></a>
+      <a href="#education" class="mobile-link"
+        onclick="scrollToSection('education'); return false;"><span>Освіта</span></a>
+      <a href="#pricing" class="mobile-link" onclick="scrollToSection('pricing'); return false;"><span>Ціни</span></a>
+      <a href="#contact" class="mobile-link"
+        onclick="scrollToSection('contact'); return false;"><span>Контакти</span></a>
+      <a href="#contact" class="btn-primary mobile-cta"
+        onclick="scrollToSection('contact'); return false;"><span>Записатись</span></a>
     </div>
   </nav>
 
@@ -137,15 +179,14 @@
             <span>Вероніка Беруненко</span>
           </h1>
           <div class="hero-tagline">
-            <p
-              data-uk="Вірю, що кожна людина має внутрішній ресурс для щасливого життя, і моє завдання — допомогти вам його віднайти. Консультую онлайн та особисто в м. Кривий Ріг.">
+            <p>
               Вітаю! Вірю, що кожна людина має внутрішній ресурс для щасливого життя, і моє завдання — допомогти вам
               його віднайти. Консультую онлайн та особисто в м. Кривий Ріг.</p>
           </div>
           <div class="hero-cta-wrap">
-            <button class="btn-primary btn-large" onclick="scrollToSection('contact')">
-              <span data-uk="Записатись на консультацію">Записатись на консультацію</span>
-            </button>
+            <a href="#contact" class="btn-primary btn-large" onclick="scrollToSection('contact'); return false;">
+              <span>Записатись на консультацію</span>
+            </a>
           </div>
         </div>
 
@@ -169,7 +210,8 @@
           <div class="about-text">
 
             <h2>Про мене</h2>
-            <p>Вітаю! Мене звати <strong>Вероніка Беруненко</strong>, я — дипломований психолог із <strong>7-річним досвідом</strong> роботи. Допомагаю людям справлятися з тривогою,
+            <p>Вітаю! Мене звати <strong>Вероніка Беруненко</strong>, я — дипломований психолог із <strong>7-річним
+                досвідом</strong> роботи. Допомагаю людям справлятися з тривогою,
               панічними атаками, депресією, труднощами у стосунках, наслідками травм та багатьма іншими
               проблемами.</p>
             <p>Мій шлях у психологію був глибоко усвідомленим. Маючи за плечима фундаментальну освіту в галузі
@@ -192,9 +234,9 @@
               </div>
             </div>
 
-            <button class="btn-primary btn-large" onclick="scrollToSection('contact')">
+            <a href="#contact" class="btn-primary btn-large" onclick="scrollToSection('contact'); return false;">
               Записатись на консультацію
-            </button>
+            </a>
           </div>
 
         </div>
@@ -350,7 +392,7 @@
     <section id="reviews" class="section-mint section-fullscreen">
       <div class="container">
         <div class="section-header">
-          <h2 data-uk="Відгуки клієнтів">Відгуки клієнтів</h2>
+          <h2>Відгуки клієнтів</h2>
           <div class="section-line"></div>
         </div>
 
@@ -392,7 +434,7 @@
     <section id="education" class="section-white section-fullscreen">
       <div class="container">
         <div class="section-header">
-          <h2 data-uk="Освіта та сертифікати">Освіта та сертифікати</h2>
+          <h2>Освіта та сертифікати</h2>
           <div class="section-line"></div>
         </div>
         <div class="education-groups">
@@ -555,81 +597,78 @@
     <section id="pricing" class="section-mint section-fullscreen">
       <div class="container">
         <div class="section-header">
-          <h2 data-uk="Вартість консультацій">Вартість консультацій</h2>
-          <p class="section-sub" data-uk="Виберіть зручний для вас формат роботи">Виберіть зручний для вас формат роботи
+          <h2>Вартість консультацій</h2>
+          <p class="section-sub">Виберіть зручний для вас формат роботи
           </p>
         </div>
         <div class="pricing-grid">
 
           <!-- Plan 1 -->
           <div class="pricing-card">
-            <h3 data-uk="Одна консультація">Одна консультація </h3>
+            <h3>Одна консультація </h3>
             <div class="pricing-price">1 499 грн</div>
             <ul class="pricing-features">
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Перша консультація 60 хв">Одна консультація 60 хв</span></li>
+                </svg><span>Одна консультація 60 хв</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Виявлення базових проблем">Виявлення базових проблем</span></li>
+                </svg><span>Виявлення базових проблем</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Визначення запиту та цілей">Визначення запиту та цілей</span></li>
+                </svg><span>Визначення запиту та цілей</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Рекомендації щодо подальшої роботи">Рекомендації щодо подальшої роботи</span></li>
+                </svg><span>Рекомендації щодо подальшої роботи</span></li>
             </ul>
-            <button class="btn-primary btn-full" onclick="scrollToSection('contact')"><span
-                data-uk="Записатись">Записатись</span></button>
+            <a href="#contact" class="btn-primary btn-full" onclick="scrollToSection('contact'); return false;"><span >Записатись</span></a>
           </div>
 
           <!-- Plan 2 (popular) -->
           <div class="pricing-card pricing-popular">
-            <div class="popular-badge" data-uk="Рекомендований">Рекомендований</div>
-            <h3 data-uk="Пакет консультацій">Пакет консультацій</h3>
+            <div class="popular-badge">Рекомендований</div>
+            <h3>Пакет консультацій</h3>
             <div class="pricing-price">6 499 грн/<span
                 style="font-size: 1rem; font-weight: 400; display: block; margin-top: -0.8rem; margin-bottom: 0.9em;">1
                 299 грн консультація</span></div>
             <ul class="pricing-features">
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="5 консультацій по 60 хв">5 консультацій по 60 хв</span></li>
+                </svg><span>5 консультацій по 60 хв</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Робота з конкретним запитом">Робота з конкретним запитом</span></li>
+                </svg><span>Робота з конкретним запитом</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Опрацювання причин проблеми">Опрацювання причин проблеми</span></li>
+                </svg><span>Опрацювання причин проблеми</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Складання плану рішення">Складання плану рішення</span></li>
+                </svg><span>Складання плану рішення</span></li>
             </ul>
-            <button class="btn-popular btn-full" onclick="scrollToSection('contact')"><span
-                data-uk="Записатись">Записатись</span></button>
+            <a href="#contact" class="btn-popular btn-full" onclick="scrollToSection('contact'); return false;"><span >Записатись</span></a>
           </div>
 
           <!-- Plan 3 -->
           <div class="pricing-card">
-            <h3 data-uk="Пакет консультацій">Глибока терапія</h3>
+            <h3>Глибока терапія</h3>
             <div class="pricing-price">9 599 грн/<span
                 style="font-size: 1rem; font-weight: 400; display: block; margin-top: -0.8rem; margin-bottom: 0.9em;">1
                 199 грн консультація</span></div>
             <ul class="pricing-features">
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="8 консультацій по 60 хв">8 консультацій по 60 хв</span></li>
+                </svg><span>8 консультацій по 60 хв</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Відповіді на хвилюючі питання">Глибока робота з травмами</span></li>
+                </svg><span>Глибока робота з травмами</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Виявлення неконструктивних сценаріїв">Індивідуальна програма терапії</span></li>
+                </svg><span>Індивідуальна програма терапії</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg><span data-uk="Складання плану рішення">Довгострокова підтримка</span></li>
+                </svg><span>Довгострокова підтримка</span></li>
             </ul>
-            <button class="btn-primary btn-full" onclick="scrollToSection('contact')"><span
-                data-uk="Записатись">Записатись</span></button>
+            <a href="#contact" class="btn-primary btn-full" onclick="scrollToSection('contact'); return false;"><span >Записатись</span></a>
           </div>
 
         </div>
@@ -655,8 +694,8 @@
               <img src="logo.svg" alt="Вероніка Беруненко" />
             </div>
 
-            <h2 data-uk="Записатись на консультацію">Записатись на консультацію</h2>
-            <p class="contact-sub" data-uk="Виберіть зручний для вас спосіб контакту зі мною">Виберіть зручний для вас
+            <h2>Записатись на консультацію</h2>
+            <p class="contact-sub">Виберіть зручний для вас
               спосіб контакту зі мною</p>
 
             <div class="social-grid">

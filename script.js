@@ -226,44 +226,6 @@ window.addEventListener('DOMContentLoaded', equaliseEduItems);
 window.addEventListener('resize', equaliseEduItems);
 
 /* ─── Equalise pricing item heights across all cards ── */
-function equalisePricingItems() {
-  if (window.innerWidth < 768) {
-    document.querySelectorAll('.pricing-features li').forEach(li => {
-      li.style.minHeight = '';
-    });
-    return;
-  }
-
-  const cards = document.querySelectorAll('.pricing-card');
-
-  // Reset all heights first
-  document.querySelectorAll('.pricing-features li').forEach(li => {
-    li.style.minHeight = '';
-  });
-
-  // Find max number of items across all cards
-  let maxItems = 0;
-  cards.forEach(card => {
-    const items = card.querySelectorAll('.pricing-features li');
-    if (items.length > maxItems) maxItems = items.length;
-  });
-
-  // For each row position, set all cards' item to the tallest one
-  for (let i = 0; i < maxItems; i++) {
-    let maxH = 0;
-    cards.forEach(card => {
-      const li = card.querySelectorAll('.pricing-features li')[i];
-      if (li) maxH = Math.max(maxH, li.offsetHeight);
-    });
-    cards.forEach(card => {
-      const li = card.querySelectorAll('.pricing-features li')[i];
-      if (li) li.style.minHeight = maxH + 'px';
-    });
-  }
-}
-
-window.addEventListener('DOMContentLoaded', equalisePricingItems);
-window.addEventListener('resize', equalisePricingItems);
 
 function equalisePricingItems() {
   if (window.innerWidth < 768) {
@@ -315,4 +277,10 @@ window.addEventListener('resize', () => {
     el.style.minHeight = '';
   });
   equalisePricingItems();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeDiploma();
+  }
 });
